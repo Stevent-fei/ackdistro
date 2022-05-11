@@ -208,7 +208,7 @@ data:
         uid: ${POD_UID}
     spec:
       containers:
-      - image: sea.hub:5000/ecp_builder/nginxdemos:0.2
+      - image: ack-agility-registry.cn-shanghai.cr.aliyuncs.com/ecp_builder/nginxdemos:0.2
         imagePullPolicy: IfNotPresent
         name: main
       dnsPolicy: ClusterFirst

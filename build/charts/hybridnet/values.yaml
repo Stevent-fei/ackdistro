@@ -3,7 +3,7 @@ images:
     image: ecp_builder/hybridnet
     tag: v0.4.2
 globalconfig:
-  RegistryURL: "sea.hub:5000"
+  RegistryURL: "ack-agility-registry.cn-shanghai.cr.aliyuncs.com"
   PodCIDR: 100.64.0.0/16
   Gateway: 100.64.0.1
   IPVersion: "4"

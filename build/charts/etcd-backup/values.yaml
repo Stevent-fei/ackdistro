@@ -15,6 +15,6 @@ cronJobInfo:
   parallelism: 3
 
 globalconfig:
-  RegistryURL: "sea.hub:5000"
+  RegistryURL: "ack-agility-registry.cn-shanghai.cr.aliyuncs.com"
   # 单master模式
   SingleMasterMode: false

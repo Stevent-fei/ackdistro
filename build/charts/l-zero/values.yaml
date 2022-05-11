@@ -14,4 +14,4 @@ k8s_namespace: kube-system
 domain: "l-zero-ingress.paas.com"
 globalconfig:
   DisableFailureDomain: false
-  RegistryURL: sea.hub:5000
+  RegistryURL: ack-agility-registry.cn-shanghai.cr.aliyuncs.com

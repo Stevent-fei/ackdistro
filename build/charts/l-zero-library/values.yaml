@@ -7,6 +7,6 @@ images:
     tag: ubuntu
 k8s_namespace: acs-system
 globalconfig:
-  RegistryURL: sea.hub:5000
+  RegistryURL: ack-agility-registry.cn-shanghai.cr.aliyuncs.com
   SuspendPeriodHealthCheck: false
   SuspendPeriodBroadcastHealthCheck: false
