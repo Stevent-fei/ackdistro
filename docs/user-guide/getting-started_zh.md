@@ -57,6 +57,11 @@ spec:
     - StorageDevice=/dev/vdc
     #- DockerRunDiskSize=200 # unit is GiB, capacity for /var/lib/docker
     #- KubeletRunDiskSize=200 # unit is GiB, capacity for /var/lib/kubelet
+    #- DNSDomain=cluster.local
+    #- ServiceNodePortRange=30000-32767
+    #- MTU=1440 # mtu for calico interface, default is 1440
+    #- IPAutoDetectionMethod=can-reach=8.8.8.8 # calico ip auto-detection method, default is "can-reach=8.8.8.8", see https://projectcalico.docs.tigera.io/archive/v3.8/reference/node/configuration
+    #- SuspendPeriodHealthCheck=false # suspend period health-check, default is false
   ssh:
     passwd: "password"
     #user: root
@@ -92,7 +97,7 @@ sealer apply -f ClusterFile.yaml
 
 ```bash
 # 部署集群时，默认会运行集群预检工具，如果出现了预检错误ErrorX，但您评估觉得可以忽略该报错，请按如下操作
-sealer apply -f ClusterFile.yaml --env IgnoreErrors=ErrorX[,ErrorY]
+sealer apply -f ClusterFile.yaml --env IgnoreErrors="ErrorX[;ErrorY]"
 
 # 如果想忽略所有
 sealer apply -f ClusterFile.yaml --env IgnoreErrors=all

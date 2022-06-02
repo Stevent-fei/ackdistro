@@ -55,6 +55,11 @@ spec:
     - StorageDevice=/dev/vdc
     #- DockerRunDiskSize=200 # unit is GiB, capacity for /var/lib/docker
     #- KubeletRunDiskSize=200 # unit is GiB, capacity for /var/lib/kubelet
+    #- DNSDomain=cluster.local
+    #- ServiceNodePortRange=30000-32767
+    #- MTU=1440 # mtu for calico interface, default is 1440
+    #- IPAutoDetectionMethod=can-reach=8.8.8.8 # calico ip auto-detection method, default is "can-reach=8.8.8.8", see https://projectcalico.docs.tigera.io/archive/v3.8/reference/node/configuration
+    #- SuspendPeriodHealthCheck=false # suspend period health-check, default is false
   ssh:
     passwd: "password"
     #user: root
@@ -90,7 +95,7 @@ sealer apply -f ClusterFile.yaml
 
 ```bash
 # When deploying a cluster, the cluster precheck tool will run by default. If there is a precheck error ErrorX, but you think the error can be ignored, please do as follows
-sealer apply -f ClusterFile.yaml --env IgnoreErrors=ErrorX[,ErrorY]
+sealer apply -f ClusterFile.yaml --env IgnoreErrors="ErrorX[;ErrorY]"
 
 # Also you can ignore all errors
 sealer apply -f ClusterFile.yaml --env IgnoreErrors=all
